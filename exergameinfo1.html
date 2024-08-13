@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise Information</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Ensure the same CSS file is used -->
+  <style>
+    /* Add any additional styles here */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 110vh;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgb(235, 209, 163);
+      font-family: Verdana;
+      font-weight: bold;
+      color: #333;
+    }
+    .container h1 {
+      margin-bottom: 20px;
+    }
+    .container p {
+      font-size: 20px;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 20px;
+      font-family: Georgia;
+      color: #333;
+      font-weight: 100;
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #007BFF;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exergame Information</h1>
+    <p>This exergame is the Flappy Bird Game.</p>
+    <p>How it works:<br>
+        Your movements control the movements of the Flappy Bird! Move up to move the bird up, and down to move the bird down. Remember: Don't let the bird touch the pipes! Earn one point every time the bird goes past the pipes. However, once the Flappy Bird touches the pipes... it's "Game Over" for you!
+    </p>
+    <p>What you need:<br>
+        A competitive streak for winning! Last as long as you can and accumulate as many points as possible. Remember to have a cup of water beside you in case you want to have another go!
+    </p>
+    <div class="button-container">
+      <button onclick="goBack()">Back</button>
+      <button onclick="goNext()">Next</button>
+    </div>
+    <div id="error" class="error" style="display: none;">Speech Recognition API not supported or failed.</div>
+  </div>
+
+  <script>
+    // Function to handle the "back" button action
+    function goBack() {
+      console.log('Navigating to previous page');
+      window.location.href = "exergames.html"; // URL of the previous page
+    }
+
+    // Function to handle the "next" button action
+    function goNext() {
+      console.log('Navigating to next page');
+      window.location.href = "exergame1.html"; // URL of the next page
+    }
+
+    // Initialize the Speech Recognition API
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = function() {
+        console.log('Speech recognition service has started');
+      };
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript.trim().toLowerCase();
+        console.log(`You said: ${transcript}`);
+
+        if (transcript === 'next') {
+          console.log('Executing goNext()');
+          goNext();
+        } else if (transcript === 'back') {
+          console.log('Executing goBack()');
+          goBack();
+        } else {
+          console.log('Command not recognized');
+        }
+      };
+
+      recognition.onerror = function(event) {
+        console.error('Speech recognition error', event.error);
+        document.getElementById('error').style.display = 'block';
+      };
+
+      recognition.onend = function() {
+        console.log('Speech recognition service stopped. Restarting...');
+        recognition.start(); // Restart the recognition
+      };
+
+      // Start listening when the page loads
+      window.onload = function() {
+        recognition.start();
+      };
+    } else {
+      console.error('Speech Recognition API not supported');
+      document.getElementById('error').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

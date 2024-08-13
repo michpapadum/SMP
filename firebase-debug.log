@@ -1,0 +1,416 @@
+[debug] [2024-07-31T12:09:01.312Z] ----------------------------------------------------------------------
+[debug] [2024-07-31T12:09:01.318Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\netflix\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-07-31T12:09:01.319Z] CLI Version:   13.14.2
+[debug] [2024-07-31T12:09:01.319Z] Platform:      win32
+[debug] [2024-07-31T12:09:01.320Z] Node Version:  v20.16.0
+[debug] [2024-07-31T12:09:01.320Z] Time:          Wed Jul 31 2024 20:09:01 GMT+0800 (Singapore Standard Time)
+[debug] [2024-07-31T12:09:01.320Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-31T12:09:01.332Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-31T12:09:01.333Z] > authorizing via signed-in user (michpapadum@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\netflix\Downloads\smp
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-07-31T12:09:13.892Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-07-31T12:09:14.598Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-07-31T12:09:14.599Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project smp-24rgss08-32e9d (SMP 24RGSS08) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-07-31T12:09:15.516Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-07-31T12:09:15.516Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/smp-24rgss08-32e9d
+[debug] [2024-07-31T12:09:16.980Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firebasedatabase.googleapis.com 200
+[debug] [2024-07-31T12:09:16.981Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-07-31T12:09:16.987Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/smp-24rgss08-32e9d/locations/-/instances/smp-24rgss08-32e9d-default-rtdb [none]
+[debug] [2024-07-31T12:09:18.507Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/smp-24rgss08-32e9d/locations/-/instances/smp-24rgss08-32e9d-default-rtdb 200
+[debug] [2024-07-31T12:09:18.507Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/smp-24rgss08-32e9d/locations/-/instances/smp-24rgss08-32e9d-default-rtdb {"name":"projects/95759036563/locations/asia-southeast1/instances/smp-24rgss08-32e9d-default-rtdb","project":"projects/95759036563","databaseUrl":"https://smp-24rgss08-32e9d-default-rtdb.asia-southeast1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2024-07-31T12:09:25.285Z] >>> [apiv2][query] GET https://smp-24rgss08-32e9d-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json [none]
+[debug] [2024-07-31T12:09:25.350Z] <<< [apiv2][status] GET https://smp-24rgss08-32e9d-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json 200
+[debug] [2024-07-31T12:09:25.351Z] <<< [apiv2][body] GET https://smp-24rgss08-32e9d-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json [stream]
+[info] +  Database Rules for smp-24rgss08-32e9d-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2024-07-31T12:09:25.366Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firestore.googleapis.com [none]
+[debug] [2024-07-31T12:09:25.367Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firestore.googleapis.com x-goog-quota-user=projects/smp-24rgss08-32e9d
+[debug] [2024-07-31T12:09:27.019Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firestore.googleapis.com 200
+[debug] [2024-07-31T12:09:27.021Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/firestore.googleapis.com [omitted]
+[debug] [2024-07-31T12:09:27.024Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default) [none]
+[debug] [2024-07-31T12:09:27.148Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default) 200
+[debug] [2024-07-31T12:09:27.149Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default) {"name":"projects/smp-24rgss08-32e9d/databases/(default)","uid":"67f8ed62-fc19-452b-8e16-3b824b8d73ab","createTime":"2024-07-31T11:38:50.323866Z","updateTime":"2024-07-31T11:38:50.323866Z","locationId":"asia-southeast1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-07-31T11:38:50.323866Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"zas","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IM7x2rmf0YcDMML4+46b0YcD"}
+[debug] [2024-07-31T12:09:27.150Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-07-31T12:09:27.152Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-31T12:09:27.154Z] > authorizing via signed-in user (michpapadum@gmail.com)
+[debug] [2024-07-31T12:09:27.155Z] [iam] checking project smp-24rgss08-32e9d for permissions ["firebase.projects.get"]
+[debug] [2024-07-31T12:09:27.157Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions [none]
+[debug] [2024-07-31T12:09:27.158Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions x-goog-quota-user=projects/smp-24rgss08-32e9d
+[debug] [2024-07-31T12:09:27.158Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-31T12:09:28.223Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions 200
+[debug] [2024-07-31T12:09:28.224Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-07-31T12:09:34.766Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/smp-24rgss08-32e9d/releases pageSize=10&pageToken=
+[debug] [2024-07-31T12:09:36.128Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/smp-24rgss08-32e9d/releases 200
+[debug] [2024-07-31T12:09:36.129Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/smp-24rgss08-32e9d/releases {"releases":[{"name":"projects/smp-24rgss08-32e9d/releases/cloud.firestore","rulesetName":"projects/smp-24rgss08-32e9d/rulesets/a13b7349-332f-4379-8c72-442dbe118f1e","createTime":"2024-07-31T11:39:00.017740Z","updateTime":"2024-07-31T11:39:00.017740Z"},{"name":"projects/smp-24rgss08-32e9d/releases/firebase.storage/smp-24rgss08-32e9d.appspot.com","rulesetName":"projects/smp-24rgss08-32e9d/rulesets/91de5ed3-4dd6-4674-b783-7b6584d365ea","createTime":"2024-07-31T12:08:13.237957Z","updateTime":"2024-07-31T12:08:13.237957Z"}]}
+[debug] [2024-07-31T12:09:36.216Z] Found ruleset: projects/smp-24rgss08-32e9d/rulesets/a13b7349-332f-4379-8c72-442dbe118f1e
+[debug] [2024-07-31T12:09:36.218Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/smp-24rgss08-32e9d/rulesets/a13b7349-332f-4379-8c72-442dbe118f1e [none]
+[debug] [2024-07-31T12:09:37.557Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/smp-24rgss08-32e9d/rulesets/a13b7349-332f-4379-8c72-442dbe118f1e 200
+[debug] [2024-07-31T12:09:37.558Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/smp-24rgss08-32e9d/rulesets/a13b7349-332f-4379-8c72-442dbe118f1e [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-07-31T12:09:47.958Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-07-31T12:09:47.962Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-07-31T12:09:48.044Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-07-31T12:09:48.044Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2024-07-31T12:09:48.047Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-07-31T12:09:48.048Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/smp-24rgss08-32e9d/databases/(default)/collectionGroups/-/indexes {}
+[info] 
+=== Functions Setup
+[debug] [2024-07-31T12:09:48.050Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-31T12:09:48.051Z] > authorizing via signed-in user (michpapadum@gmail.com)
+[debug] [2024-07-31T12:09:48.051Z] [iam] checking project smp-24rgss08-32e9d for permissions ["firebase.projects.get"]
+[debug] [2024-07-31T12:09:48.052Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions [none]
+[debug] [2024-07-31T12:09:48.052Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions x-goog-quota-user=projects/smp-24rgss08-32e9d
+[debug] [2024-07-31T12:09:48.052Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-31T12:09:49.109Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions 200
+[debug] [2024-07-31T12:09:49.110Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-07-31T12:09:49.113Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-07-31T12:09:49.114Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/smp-24rgss08-32e9d
+[debug] [2024-07-31T12:09:49.136Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-07-31T12:09:49.137Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/smp-24rgss08-32e9d
+[debug] [2024-07-31T12:09:50.572Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/runtimeconfig.googleapis.com 200
+[debug] [2024-07-31T12:09:50.573Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-07-31T12:09:50.584Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/cloudfunctions.googleapis.com 200
+[debug] [2024-07-31T12:09:50.584Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/smp-24rgss08-32e9d/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
+[info] 
+=== Hosting Setup
+[debug] [2024-07-31T12:10:10.936Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/smp-24rgss08-32e9d [none]
+[debug] [2024-07-31T12:10:11.199Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/smp-24rgss08-32e9d 200
+[debug] [2024-07-31T12:10:11.199Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/smp-24rgss08-32e9d {"projectId":"smp-24rgss08-32e9d","projectNumber":"95759036563","displayName":"SMP 24RGSS08","name":"projects/smp-24rgss08-32e9d","resources":{"hostingSite":"smp-24rgss08-32e9d","realtimeDatabaseInstance":"smp-24rgss08-32e9d-default-rtdb","storageBucket":"smp-24rgss08-32e9d.appspot.com","locationId":"asia-southeast1"},"state":"ACTIVE","etag":"1_31f3cc8b-72c2-4e92-bdc7-4707f6d201f9"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2024-07-31T12:10:23.588Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2024-07-31T12:10:23.618Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2024-07-31T12:10:23.618Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.12.4","browserURL":"https://www.gstatic.com/firebasejs/10.12.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.12.4/firebase.tgz"},"live":{"version":"10.12","browserURL":"https://www.gstatic.com/firebasejs/live/10.12/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.12/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.12.4/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.12.4/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/10.12.4/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/10.12.4/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.12.4/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.12.4/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.12.4/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.12.4/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.12.4/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.12.4/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js","vertexai-preview":"https://www.gstatic.com/firebasejs/10.12.4/firebase-vertexai-preview.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\Users\netflix\Downloads\smp is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=392382726&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2024-07-31T12:10:27.289Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-07-31T12:10:27.290Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-07-31T12:10:27.663Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-07-31T12:10:27.664Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2024-07-31T12:10:27.696Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2024-07-31T12:10:28.243Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2024-07-31T12:10:28.244Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"michpapadum","id":172944704,"node_id":"U_kgDOCk7tQA","avatar_url":"https://avatars.githubusercontent.com/u/172944704?v=4","gravatar_id":"","url":"https://api.github.com/users/michpapadum","html_url":"https://github.com/michpapadum","followers_url":"https://api.github.com/users/michpapadum/followers","following_url":"https://api.github.com/users/michpapadum/following{/other_user}","gists_url":"https://api.github.com/users/michpapadum/gists{/gist_id}","starred_url":"https://api.github.com/users/michpapadum/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/michpapadum/subscriptions","organizations_url":"https://api.github.com/users/michpapadum/orgs","repos_url":"https://api.github.com/users/michpapadum/repos","events_url":"https://api.github.com/users/michpapadum/events{/privacy}","received_events_url":"https://api.github.com/users/michpapadum/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":0,"public_gists":0,"followers":0,"following":0,"created_at":"2024-06-16T01:46:54Z","updated_at":"2024-07-30T12:17:51Z","private_gists":0,"total_private_repos":2,"owned_private_repos":2,"disk_usage":0,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as michpapadum 
+[info] 
+[debug] [2024-07-31T12:10:38.495Z] >>> [apiv2][query] GET https://api.github.com/repos/michpapadum/smp-/actions/secrets/public-key type=owner
+[debug] [2024-07-31T12:10:38.904Z] <<< [apiv2][status] GET https://api.github.com/repos/michpapadum/smp-/actions/secrets/public-key 200
+[debug] [2024-07-31T12:10:38.905Z] <<< [apiv2][body] GET https://api.github.com/repos/michpapadum/smp-/actions/secrets/public-key {"key_id":"3380204578043523366","key":"VbH2RU5HNFniQRAmNzZ6RGDPjqsRHmIrszigvatdrCM="}
+[debug] [2024-07-31T12:10:38.916Z] >>> [apiv2][query] GET https://api.github.com/repos/michpapadum/smp- [none]
+[debug] [2024-07-31T12:10:39.309Z] <<< [apiv2][status] GET https://api.github.com/repos/michpapadum/smp- 200
+[debug] [2024-07-31T12:10:39.311Z] <<< [apiv2][body] GET https://api.github.com/repos/michpapadum/smp- {"id":835702139,"node_id":"R_kgDOMc_New","name":"smp-","full_name":"michpapadum/smp-","private":true,"owner":{"login":"michpapadum","id":172944704,"node_id":"U_kgDOCk7tQA","avatar_url":"https://avatars.githubusercontent.com/u/172944704?v=4","gravatar_id":"","url":"https://api.github.com/users/michpapadum","html_url":"https://github.com/michpapadum","followers_url":"https://api.github.com/users/michpapadum/followers","following_url":"https://api.github.com/users/michpapadum/following{/other_user}","gists_url":"https://api.github.com/users/michpapadum/gists{/gist_id}","starred_url":"https://api.github.com/users/michpapadum/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/michpapadum/subscriptions","organizations_url":"https://api.github.com/users/michpapadum/orgs","repos_url":"https://api.github.com/users/michpapadum/repos","events_url":"https://api.github.com/users/michpapadum/events{/privacy}","received_events_url":"https://api.github.com/users/michpapadum/received_events","type":"User","site_admin":false},"html_url":"https://github.com/michpapadum/smp-","description":null,"fork":false,"url":"https://api.github.com/repos/michpapadum/smp-","forks_url":"https://api.github.com/repos/michpapadum/smp-/forks","keys_url":"https://api.github.com/repos/michpapadum/smp-/keys{/key_id}","collaborators_url":"https://api.github.com/repos/michpapadum/smp-/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/michpapadum/smp-/teams","hooks_url":"https://api.github.com/repos/michpapadum/smp-/hooks","issue_events_url":"https://api.github.com/repos/michpapadum/smp-/issues/events{/number}","events_url":"https://api.github.com/repos/michpapadum/smp-/events","assignees_url":"https://api.github.com/repos/michpapadum/smp-/assignees{/user}","branches_url":"https://api.github.com/repos/michpapadum/smp-/branches{/branch}","tags_url":"https://api.github.com/repos/michpapadum/smp-/tags","blobs_url":"https://api.github.com/repos/michpapadum/smp-/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/michpapadum/smp-/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/michpapadum/smp-/git/refs{/sha}","trees_url":"https://api.github.com/repos/michpapadum/smp-/git/trees{/sha}","statuses_url":"https://api.github.com/repos/michpapadum/smp-/statuses/{sha}","languages_url":"https://api.github.com/repos/michpapadum/smp-/languages","stargazers_url":"https://api.github.com/repos/michpapadum/smp-/stargazers","contributors_url":"https://api.github.com/repos/michpapadum/smp-/contributors","subscribers_url":"https://api.github.com/repos/michpapadum/smp-/subscribers","subscription_url":"https://api.github.com/repos/michpapadum/smp-/subscription","commits_url":"https://api.github.com/repos/michpapadum/smp-/commits{/sha}","git_commits_url":"https://api.github.com/repos/michpapadum/smp-/git/commits{/sha}","comments_url":"https://api.github.com/repos/michpapadum/smp-/comments{/number}","issue_comment_url":"https://api.github.com/repos/michpapadum/smp-/issues/comments{/number}","contents_url":"https://api.github.com/repos/michpapadum/smp-/contents/{+path}","compare_url":"https://api.github.com/repos/michpapadum/smp-/compare/{base}...{head}","merges_url":"https://api.github.com/repos/michpapadum/smp-/merges","archive_url":"https://api.github.com/repos/michpapadum/smp-/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/michpapadum/smp-/downloads","issues_url":"https://api.github.com/repos/michpapadum/smp-/issues{/number}","pulls_url":"https://api.github.com/repos/michpapadum/smp-/pulls{/number}","milestones_url":"https://api.github.com/repos/michpapadum/smp-/milestones{/number}","notifications_url":"https://api.github.com/repos/michpapadum/smp-/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/michpapadum/smp-/labels{/name}","releases_url":"https://api.github.com/repos/michpapadum/smp-/releases{/id}","deployments_url":"https://api.github.com/repos/michpapadum/smp-/deployments","created_at":"2024-07-30T11:13:22Z","updated_at":"2024-07-30T11:13:26Z","pushed_at":"2024-07-30T11:13:23Z","git_url":"git://github.com/michpapadum/smp-.git","ssh_url":"git@github.com:michpapadum/smp-.git","clone_url":"https://github.com/michpapadum/smp-.git","svn_url":"https://github.com/michpapadum/smp-","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":false,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"private","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"temp_clone_token":"BJHO2QGFNNC35N45NPNZLALGVIVOW","allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","network_count":0,"subscribers_count":1}
+[debug] [2024-07-31T12:10:39.320Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts [none]
+[debug] [2024-07-31T12:10:39.321Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts {"accountId":"github-action-835702139","serviceAccount":{"displayName":"GitHub Actions (michpapadum/smp-)","description":"A service account with permission to deploy to Firebase Hosting and Cloud Functions for the GitHub repository michpapadum/smp-"}}
+[debug] [2024-07-31T12:10:40.958Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts 409
+[debug] [2024-07-31T12:10:40.959Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts [omitted]
+[debug] [2024-07-31T12:10:40.967Z] >>> [apiv2][query] GET https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com [none]
+[debug] [2024-07-31T12:10:40.971Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:getIamPolicy [none]
+[debug] [2024-07-31T12:10:41.321Z] <<< [apiv2][status] GET https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com 200
+[debug] [2024-07-31T12:10:41.324Z] <<< [apiv2][body] GET https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com {"name":"projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com","projectId":"smp-24rgss08-32e9d","uniqueId":"114753192711570083916","email":"github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com","displayName":"GitHub Actions (michpapadum/smp-)","etag":"MDEwMjE5MjA=","description":"A service account with permission to deploy to Firebase Hosting and Cloud Functions for the GitHub repository michpapadum/smp-","oauth2ClientId":"114753192711570083916"}
+[debug] [2024-07-31T12:10:42.284Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:getIamPolicy 200
+[debug] [2024-07-31T12:10:42.286Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:getIamPolicy {"version":1,"etag":"BwYeifJx2rM=","bindings":[{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-95759036563@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:smp-24rgss08-32e9d@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-95759036563@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-95759036563@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-95759036563@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-95759036563@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:michpapadum@gmail.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.serviceUsageConsumer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]}]}
+[debug] [2024-07-31T12:10:42.291Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:setIamPolicy [none]
+[debug] [2024-07-31T12:10:42.292Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:setIamPolicy {"policy":{"version":1,"etag":"BwYeifJx2rM=","bindings":[{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-95759036563@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:smp-24rgss08-32e9d@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-95759036563@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-95759036563@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-95759036563@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-95759036563@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:michpapadum@gmail.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.serviceUsageConsumer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2024-07-31T12:10:43.348Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:setIamPolicy 200
+[debug] [2024-07-31T12:10:43.349Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smp-24rgss08-32e9d:setIamPolicy {"version":1,"etag":"BwYeifu/mbU=","bindings":[{"role":"roles/cloudfunctions.developer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-95759036563@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:smp-24rgss08-32e9d@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-95759036563@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebasehosting.admin","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-95759036563@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-95759036563@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-95759036563@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:michpapadum@gmail.com"]},{"role":"roles/run.viewer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.apiKeysViewer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/serviceusage.serviceUsageConsumer","members":["serviceAccount:github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-63d2v@smp-24rgss08-32e9d.iam.gserviceaccount.com"]}]}
+[debug] [2024-07-31T12:10:43.351Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com/keys [none]
+[debug] [2024-07-31T12:10:43.352Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com/keys {"keyAlgorithm":"KEY_ALG_UNSPECIFIED","privateKeyType":"TYPE_GOOGLE_CREDENTIALS_FILE"}
+[debug] [2024-07-31T12:10:43.811Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com/keys 200
+[debug] [2024-07-31T12:10:43.812Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com/keys {"name":"projects/smp-24rgss08-32e9d/serviceAccounts/github-action-835702139@smp-24rgss08-32e9d.iam.gserviceaccount.com/keys/49257ab69b0477b88d2b687da357bd9b605fc1bc","privateKeyType":"TYPE_GOOGLE_CREDENTIALS_FILE","privateKeyData":"ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAic21wLTI0cmdzczA4LTMyZTlkIiwKICAicHJpdmF0ZV9rZXlfaWQiOiAiNDkyNTdhYjY5YjA0NzdiODhkMmI2ODdkYTM1N2JkOWI2MDVmYzFiYyIsCiAgInByaXZhdGVfa2V5IjogIi0tLS0tQkVHSU4gUFJJVkFURSBLRVktLS0tLVxuTUlJRXZRSUJBREFOQmdrcWhraUc5dzBCQVFFRkFBU0NCS2N3Z2dTakFnRUFBb0lCQVFDemZVa3U2V3dTUjVJK1xuMElrdEJ4UjZYV3NkMk1DMDJjam9ya2pFWTZSTUJidFBrN0dJRS92Q2dadlM2MG9FaFM4Ukl5MmxOZkk2bElxcFxuNC9MTWxXYmoxOHltTEt1bVc2cllvZ1R4aUdxZ3dHTG9iaTk0K3R5RmtVSXY5WnpILzlCZEJqZUVxSUdEMVR3YVxuMFdaWmI2cDFwS0hlKzhvcGN0aG9hS1Jld2haWXZaYXJ5VEVFaUhCTXpyREVXUTdLVDJ6TFNIOW8wZks2UEltK1xubzd6Y1ZPYk5nZkJBOFhpM20zc1FsUXdpbEFxVHluQjZZV0swenQxYkdoY1FQY0l5Y20zRlFNdUthZnJhSGJQalxuS01vTkxQWVZONmRzc28xV2VFOXYvQ1VmRXRWSlJVN3FCcTJyNDg1cklibUptMmV5NTUxRDc1K2liemd5U3pVQVxuYVR5MWtXY25BZ01CQUFFQ2dnRUFLUGx6NkhxdkNpaytrSXBvbGxma2E5N0Jva21tREdNZlEwYnVJNjhmaFo5VlxuV0dBK0NmT042S1JQMzBHSlh5ak1TdHcrQWxZald3NG43WXExRmRFUmNQZ0ZwdlhScGFPTmgvRE1zaHJUUktsR1xucXdya1dYampPTGFsWm05cWdCbTlCazl5QXgyNG0xRGxiTFhhNkpYZVV3Ym5VUkVuNEhod1FMMktzSHNjUU50OFxuOXJuVjlGTUU0b0xHK09qbDNjMHFHZkNIaUh4NUR1SXJTNXEwdjIvZkt3L0NjNWhON2pwbjBONDlxcUUvbE8vK1xuMW5hR2cya3F4NjlaeStISHYzc0hWaHNWYm5sYWRkZEpYRkxMcVY5NDJlaTV2YzdTV043TVFYNVJIalR2QkV5OVxuSzFxa0dMTVR0QmpDUXhGcG5kbitCYmQ1U2gyVVNyd0lrOTBmMFZmMTJRS0JnUURodWgrNmgyclhzMlJnUTVES1xuZjF5ZkE1Qkw4bWtiZDUxdmxzU3dGdUtUOHlWaHcvVDZySFNPdGNIcVFYSjlUNzU3Y2Vpa3k5YzUyKzZFbEsrSVxuWXByZ1o4VFdyWFZvUHFPRmNOTHVtcnJ1UGF4QWNyUU9BUmJUbjNONG1HNnFzVlVSQWpzMWhqZzR3engvWGc2VFxuK0txQXo0SlhrSTFMa3RobUdZTDdpRSs4WXdLQmdRRExqNi9aekpTTW5NWmRQVFpxUkg4OG0zbjFySVBRMnNVZVxudnROczVqaVFLZE8xdkRMM0hPeStuS3JndElwMDZkZ0x0dktvd3dET2xjNVhwb2Rub1k5bHlPYWVSV2ZSUTlyNVxueldHVUgvZWwxd0VVNXYyNWlLa1RGdDQ0SUh5ZVlYWHd1NGdQanRVYlFidmhhdUpSM2MxcFpEc3ljc2tGUmsrV1xuam9JZ0pPMWJiUUtCZ1FEWmI4c0VpVkdZT293a1ZyRncvc0tmd25VTFU1V0FDZmN6K00yNnVqREVSK0hvalRTOVxuQzhhemVjNHo4NXR2cnBOVW9tTng2NUdGZ0tBQVFxSGNCUEFmM3BXMEhoOE1yZG9pdm8zUm5tY1crMzJrRDFuMlxuYTRJcmxGdE0vYmtNNEFtTGV0VENPR3FMOHpXaGsxOERsdlBYWlF5dmdPVTZ1VmVPOG1CRUlBaCs5UUtCZ0F3eVxuak8vNUVVR250ejhwQnRTeFRBcCtxbjB0SEN6c252a3JxQkdUYmZvOWQyRWhhTkJqM0UvRHBYMlhjK0J6anEyTlxuQmRkVTcveHcvNDlDL0VRYWF6UkhLSUo5V0M0eTZiRWtQRithMXNVS01CZG5pL2FOR014N0IwL0hxby8yK1JFMlxudTMxcktwdmFnWDZOWUFoVnlSUXluRlYyaVZNV2xuaElDOFlQVUdXMUFvR0FVeWdrVWtPSytzREtzcFI4SG9VTFxubG9mVmFrYUlGNmxXNXNRYnBmVnk3aVdFYXp1Zk9NZFRESXMzN2VoREY1U3NTRExadFI3RWVrZEFwVTRVbWlVT1xuR2RUcitkQ0R4cjJCV0FPZXJhc0F0ZGh4YWd6ZCtDdlNmMkFJM1hlcGVXUU5qbHVYREdITnNLK3ZIYlUzSVRvTlxuR09DNU9iVEQvUmtTVHRqM1pKaUVyYWM9XG4tLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tXG4iLAogICJjbGllbnRfZW1haWwiOiAiZ2l0aHViLWFjdGlvbi04MzU3MDIxMzlAc21wLTI0cmdzczA4LTMyZTlkLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwKICAiY2xpZW50X2lkIjogIjExNDc1MzE5MjcxMTU3MDA4MzkxNiIsCiAgImF1dGhfdXJpIjogImh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi9hdXRoIiwKICAidG9rZW5fdXJpIjogImh0dHBzOi8vb2F1dGgyLmdvb2dsZWFwaXMuY29tL3Rva2VuIiwKICAiYXV0aF9wcm92aWRlcl94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsCiAgImNsaWVudF94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL3JvYm90L3YxL21ldGFkYXRhL3g1MDkvZ2l0aHViLWFjdGlvbi04MzU3MDIxMzklNDBzbXAtMjRyZ3NzMDgtMzJlOWQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLAogICJ1bml2ZXJzZV9kb21haW4iOiAiZ29vZ2xlYXBpcy5jb20iCn0K","validAfterTime":"2024-07-31T12:10:43Z","validBeforeTime":"9999-12-31T23:59:59Z","keyAlgorithm":"KEY_ALG_RSA_2048","keyOrigin":"GOOGLE_PROVIDED","keyType":"USER_MANAGED"}
+[info] 
+[info] +  Created service account github-action-835702139 with Firebase Hosting admin permissions. 
+[debug] [2024-07-31T12:10:43.878Z] >>> [apiv2][query] PUT https://api.github.com/repos/michpapadum/smp-/actions/secrets/FIREBASE_SERVICE_ACCOUNT_SMP_24RGSS08_32E9D [none]
+[debug] [2024-07-31T12:10:43.879Z] >>> [apiv2][body] PUT https://api.github.com/repos/michpapadum/smp-/actions/secrets/FIREBASE_SERVICE_ACCOUNT_SMP_24RGSS08_32E9D {"encrypted_value":"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","key_id":"3380204578043523366"}
+[debug] [2024-07-31T12:10:44.320Z] <<< [apiv2][status] PUT https://api.github.com/repos/michpapadum/smp-/actions/secrets/FIREBASE_SERVICE_ACCOUNT_SMP_24RGSS08_32E9D 204
+[debug] [2024-07-31T12:10:44.320Z] <<< [apiv2][body] PUT https://api.github.com/repos/michpapadum/smp-/actions/secrets/FIREBASE_SERVICE_ACCOUNT_SMP_24RGSS08_32E9D undefined
+[info] +  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_SMP_24RGSS08_32E9D. 
+[info] i  You can manage your secrets at https://github.com/michpapadum/smp-/settings/secrets. 
+[info] 
+[info] 
+[info] +  Created workflow file C:\Users\netflix\Downloads\smp\.github/workflows/firebase-hosting-pull-request.yml 
+[info] 
+[info] +  Created workflow file C:\Users\netflix\Downloads\smp\.github/workflows/firebase-hosting-merge.yml 
+[info] 
+[info] i  Action required: Visit this URL to revoke authorization for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] i  Action required: Push any new workflow file(s) to your repo 
+[info] 
+=== Storage Setup
+[info] 
+[info] Firebase Storage Security Rules allow you to define how and when to allow
+[info] uploads and downloads. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] +  Wrote storage.rules 
+[info] 
+=== Emulators Setup
+[info] i  firestore: downloading cloud-firestore-emulator-v1.19.7.jar... {"metadata":{"emulator":{"name":"firestore"},"message":"downloading cloud-firestore-emulator-v1.19.7.jar..."}}
+[debug] [2024-07-31T12:11:59.878Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.19.7.jar 
+[debug] [2024-07-31T12:12:00.193Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.19.7.jar 200
+[debug] [2024-07-31T12:12:00.194Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.19.7.jar [stream]
+[info] i  database: downloading firebase-database-emulator-v4.11.2.jar... {"metadata":{"emulator":{"name":"database"},"message":"downloading firebase-database-emulator-v4.11.2.jar..."}}
+[debug] [2024-07-31T12:12:05.180Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.11.2.jar 
+[debug] [2024-07-31T12:12:05.381Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.11.2.jar 200
+[debug] [2024-07-31T12:12:05.382Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.11.2.jar [stream]
+[info] i  pubsub: downloading pubsub-emulator-0.8.14.zip... {"metadata":{"emulator":{"name":"pubsub"},"message":"downloading pubsub-emulator-0.8.14.zip..."}}
+[debug] [2024-07-31T12:12:08.885Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.8.14.zip 
+[debug] [2024-07-31T12:12:09.103Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.8.14.zip 200
+[debug] [2024-07-31T12:12:09.103Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.8.14.zip [stream]
+[debug] [2024-07-31T12:12:13.570Z] Data is 66786933
+[debug] [2024-07-31T12:12:13.572Z] [unzip] Entry: pubsub-emulator/ (compressed_size=2 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:13.573Z] [unzip] Processing entry: pubsub-emulator\
+[debug] [2024-07-31T12:12:13.573Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\
+[debug] [2024-07-31T12:12:13.574Z] [unzip] Entry: pubsub-emulator/lib/ (compressed_size=2 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:13.575Z] [unzip] Processing entry: pubsub-emulator\lib\
+[debug] [2024-07-31T12:12:13.575Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\lib\
+[debug] [2024-07-31T12:12:13.575Z] [unzip] Entry: pubsub-emulator/lib/cloud-pubsub-emulator-0.8.14-all.jar (compressed_size=66782880 bytes, uncompressed_size=71655096 bytes)
+[debug] [2024-07-31T12:12:13.575Z] [unzip] Processing entry: pubsub-emulator\lib\cloud-pubsub-emulator-0.8.14-all.jar
+[debug] [2024-07-31T12:12:13.576Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\lib
+[debug] [2024-07-31T12:12:13.576Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\lib\cloud-pubsub-emulator-0.8.14-all.jar
+[debug] [2024-07-31T12:12:14.567Z] [unzip] Entry: pubsub-emulator/bin/ (compressed_size=2 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:14.567Z] [unzip] Processing entry: pubsub-emulator\bin\
+[debug] [2024-07-31T12:12:14.567Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\bin\
+[debug] [2024-07-31T12:12:14.568Z] [unzip] Entry: pubsub-emulator/bin/cloud-pubsub-emulator.bat (compressed_size=889 bytes, uncompressed_size=2276 bytes)
+[debug] [2024-07-31T12:12:14.568Z] [unzip] Processing entry: pubsub-emulator\bin\cloud-pubsub-emulator.bat
+[debug] [2024-07-31T12:12:14.568Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\bin
+[debug] [2024-07-31T12:12:14.568Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\bin\cloud-pubsub-emulator.bat
+[debug] [2024-07-31T12:12:14.570Z] [unzip] Entry: pubsub-emulator/bin/cloud-pubsub-emulator (compressed_size=2284 bytes, uncompressed_size=5728 bytes)
+[debug] [2024-07-31T12:12:14.570Z] [unzip] Processing entry: pubsub-emulator\bin\cloud-pubsub-emulator
+[debug] [2024-07-31T12:12:14.571Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\bin
+[debug] [2024-07-31T12:12:14.571Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\pubsub-emulator-0.8.14\pubsub-emulator\bin\cloud-pubsub-emulator
+[info] i  storage: downloading cloud-storage-rules-runtime-v1.1.3.jar... {"metadata":{"emulator":{"name":"storage"},"message":"downloading cloud-storage-rules-runtime-v1.1.3.jar..."}}
+[debug] [2024-07-31T12:12:14.578Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-storage-rules-runtime-v1.1.3.jar 
+[debug] [2024-07-31T12:12:14.841Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-storage-rules-runtime-v1.1.3.jar 200
+[debug] [2024-07-31T12:12:14.841Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-storage-rules-runtime-v1.1.3.jar [stream]
+[info] i  dataconnect: downloading dataconnect-emulator-1.3.1.exe... {"metadata":{"emulator":{"name":"dataconnect"},"message":"downloading dataconnect-emulator-1.3.1.exe..."}}
+[debug] [2024-07-31T12:12:18.689Z] >>> [apiv2][query] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.3.1 
+[debug] [2024-07-31T12:12:19.036Z] <<< [apiv2][status] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.3.1 200
+[debug] [2024-07-31T12:12:19.036Z] <<< [apiv2][body] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.3.1 [stream]
+[info] i  ui: downloading ui-v1.13.0.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.13.0.zip..."}}
+[debug] [2024-07-31T12:12:21.970Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.13.0.zip 
+[info] 
+=== Remoteconfig Setup
+[debug] [2024-07-31T12:12:22.212Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.13.0.zip 200
+[debug] [2024-07-31T12:12:22.213Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.13.0.zip [stream]
+[debug] [2024-07-31T12:12:22.581Z] Data is 3605485
+[debug] [2024-07-31T12:12:22.582Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.583Z] [unzip] Processing entry: client\
+[debug] [2024-07-31T12:12:22.583Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\
+[debug] [2024-07-31T12:12:22.587Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=293 bytes, uncompressed_size=293 bytes)
+[debug] [2024-07-31T12:12:22.588Z] [unzip] Processing entry: client\favicon-16x16.png
+[debug] [2024-07-31T12:12:22.588Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.590Z] [unzip] Writing file: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\favicon-16x16.png
+[debug] [2024-07-31T12:12:22.597Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=1433 bytes, uncompressed_size=2611 bytes)
+[debug] [2024-07-31T12:12:22.598Z] [unzip] Processing entry: client\safari-pinned-tab.svg
+[debug] [2024-07-31T12:12:22.598Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.601Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\safari-pinned-tab.svg
+[debug] [2024-07-31T12:12:22.614Z] [unzip] Entry: client/favicon.ico (compressed_size=2933 bytes, uncompressed_size=13294 bytes)
+[debug] [2024-07-31T12:12:22.614Z] [unzip] Processing entry: client\favicon.ico
+[debug] [2024-07-31T12:12:22.615Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.615Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\favicon.ico
+[debug] [2024-07-31T12:12:22.618Z] [unzip] Entry: client/index.html (compressed_size=1361 bytes, uncompressed_size=3071 bytes)
+[debug] [2024-07-31T12:12:22.618Z] [unzip] Processing entry: client\index.html
+[debug] [2024-07-31T12:12:22.619Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.619Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\index.html
+[debug] [2024-07-31T12:12:22.641Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=2684 bytes, uncompressed_size=2684 bytes)
+[debug] [2024-07-31T12:12:22.641Z] [unzip] Processing entry: client\android-chrome-192x192.png
+[debug] [2024-07-31T12:12:22.641Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.642Z] [unzip] Writing file: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\android-chrome-192x192.png
+[debug] [2024-07-31T12:12:22.643Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=2123 bytes, uncompressed_size=2152 bytes)
+[debug] [2024-07-31T12:12:22.643Z] [unzip] Processing entry: client\apple-touch-icon.png
+[debug] [2024-07-31T12:12:22.644Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.644Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\apple-touch-icon.png
+[debug] [2024-07-31T12:12:22.646Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=5369 bytes, uncompressed_size=5411 bytes)
+[debug] [2024-07-31T12:12:22.646Z] [unzip] Processing entry: client\android-chrome-512x512.png
+[debug] [2024-07-31T12:12:22.646Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.647Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\android-chrome-512x512.png
+[debug] [2024-07-31T12:12:22.649Z] [unzip] Entry: client/manifest.json (compressed_size=245 bytes, uncompressed_size=551 bytes)
+[debug] [2024-07-31T12:12:22.649Z] [unzip] Processing entry: client\manifest.json
+[debug] [2024-07-31T12:12:22.649Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.650Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\manifest.json
+[debug] [2024-07-31T12:12:22.652Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2024-07-31T12:12:22.653Z] [unzip] Processing entry: client\robots.txt
+[debug] [2024-07-31T12:12:22.653Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.653Z] [unzip] Writing file: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\robots.txt
+[debug] [2024-07-31T12:12:22.655Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=2034 bytes, uncompressed_size=2034 bytes)
+[debug] [2024-07-31T12:12:22.655Z] [unzip] Processing entry: client\mstile-150x150.png
+[debug] [2024-07-31T12:12:22.655Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.656Z] [unzip] Writing file: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\mstile-150x150.png
+[debug] [2024-07-31T12:12:22.658Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.658Z] [unzip] Processing entry: client\assets\
+[debug] [2024-07-31T12:12:22.658Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\
+[debug] [2024-07-31T12:12:22.659Z] [unzip] Entry: client/assets/index-I-mhtQda.js.map (compressed_size=2322562 bytes, uncompressed_size=9922747 bytes)
+[debug] [2024-07-31T12:12:22.659Z] [unzip] Processing entry: client\assets\index-I-mhtQda.js.map
+[debug] [2024-07-31T12:12:22.659Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets
+[debug] [2024-07-31T12:12:22.660Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\index-I-mhtQda.js.map
+[debug] [2024-07-31T12:12:22.743Z] [unzip] Entry: client/assets/index-BdgySamB.css (compressed_size=35979 bytes, uncompressed_size=298654 bytes)
+[debug] [2024-07-31T12:12:22.743Z] [unzip] Processing entry: client\assets\index-BdgySamB.css
+[debug] [2024-07-31T12:12:22.743Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets
+[debug] [2024-07-31T12:12:22.744Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\index-BdgySamB.css
+[debug] [2024-07-31T12:12:22.784Z] [unzip] Entry: client/assets/index-I-mhtQda.js (compressed_size=565968 bytes, uncompressed_size=2030855 bytes)
+[debug] [2024-07-31T12:12:22.784Z] [unzip] Processing entry: client\assets\index-I-mhtQda.js
+[debug] [2024-07-31T12:12:22.784Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets
+[debug] [2024-07-31T12:12:22.785Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\index-I-mhtQda.js
+[debug] [2024-07-31T12:12:22.803Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.804Z] [unzip] Processing entry: client\assets\extensions\
+[debug] [2024-07-31T12:12:22.804Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\extensions\
+[debug] [2024-07-31T12:12:22.804Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2024-07-31T12:12:22.805Z] [unzip] Processing entry: client\assets\extensions\default-extension.png
+[debug] [2024-07-31T12:12:22.805Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\extensions
+[debug] [2024-07-31T12:12:22.805Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\extensions\default-extension.png
+[debug] [2024-07-31T12:12:22.807Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.808Z] [unzip] Processing entry: client\assets\img\
+[debug] [2024-07-31T12:12:22.808Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\img\
+[debug] [2024-07-31T12:12:22.808Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2024-07-31T12:12:22.809Z] [unzip] Processing entry: client\assets\img\database.png
+[debug] [2024-07-31T12:12:22.809Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\img
+[debug] [2024-07-31T12:12:22.809Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\img\database.png
+[debug] [2024-07-31T12:12:22.811Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.811Z] [unzip] Processing entry: client\assets\provider-icons\
+[debug] [2024-07-31T12:12:22.812Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\
+[debug] [2024-07-31T12:12:22.812Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2024-07-31T12:12:22.812Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_saml.svg
+[debug] [2024-07-31T12:12:22.813Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.813Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_saml.svg
+[debug] [2024-07-31T12:12:22.816Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2024-07-31T12:12:22.816Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_phone.svg
+[debug] [2024-07-31T12:12:22.816Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.817Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_phone.svg
+[debug] [2024-07-31T12:12:22.819Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2024-07-31T12:12:22.819Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2024-07-31T12:12:22.819Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.820Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2024-07-31T12:12:22.823Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2024-07-31T12:12:22.823Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2024-07-31T12:12:22.824Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.824Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2024-07-31T12:12:22.826Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2024-07-31T12:12:22.826Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_apple.svg
+[debug] [2024-07-31T12:12:22.826Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.827Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_apple.svg
+[debug] [2024-07-31T12:12:22.829Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2024-07-31T12:12:22.829Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_github.svg
+[debug] [2024-07-31T12:12:22.829Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.830Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_github.svg
+[debug] [2024-07-31T12:12:22.832Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2024-07-31T12:12:22.832Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2024-07-31T12:12:22.832Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.833Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2024-07-31T12:12:22.835Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2024-07-31T12:12:22.835Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2024-07-31T12:12:22.835Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.836Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2024-07-31T12:12:22.838Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2024-07-31T12:12:22.838Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2024-07-31T12:12:22.838Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.839Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2024-07-31T12:12:22.841Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2024-07-31T12:12:22.841Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2024-07-31T12:12:22.841Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.842Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2024-07-31T12:12:22.844Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2024-07-31T12:12:22.844Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_email.svg
+[debug] [2024-07-31T12:12:22.845Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.845Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_email.svg
+[debug] [2024-07-31T12:12:22.847Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2024-07-31T12:12:22.848Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_google.svg
+[debug] [2024-07-31T12:12:22.848Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.848Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_google.svg
+[debug] [2024-07-31T12:12:22.850Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2024-07-31T12:12:22.851Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2024-07-31T12:12:22.851Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons
+[debug] [2024-07-31T12:12:22.851Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2024-07-31T12:12:22.853Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2024-07-31T12:12:22.854Z] [unzip] Processing entry: client\browserconfig.xml
+[debug] [2024-07-31T12:12:22.854Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.854Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\browserconfig.xml
+[debug] [2024-07-31T12:12:22.857Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=475 bytes, uncompressed_size=475 bytes)
+[debug] [2024-07-31T12:12:22.857Z] [unzip] Processing entry: client\favicon-32x32.png
+[debug] [2024-07-31T12:12:22.858Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client
+[debug] [2024-07-31T12:12:22.858Z] [unzip] Writing file: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\client\favicon-32x32.png
+[debug] [2024-07-31T12:12:22.860Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.860Z] [unzip] Processing entry: server\
+[debug] [2024-07-31T12:12:22.860Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\
+[debug] [2024-07-31T12:12:22.861Z] [unzip] Entry: server/server.mjs.map (compressed_size=294629 bytes, uncompressed_size=1346672 bytes)
+[debug] [2024-07-31T12:12:22.861Z] [unzip] Processing entry: server\server.mjs.map
+[debug] [2024-07-31T12:12:22.861Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server
+[debug] [2024-07-31T12:12:22.862Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\server.mjs.map
+[debug] [2024-07-31T12:12:22.877Z] [unzip] Entry: server/server.mjs (compressed_size=314679 bytes, uncompressed_size=1167517 bytes)
+[debug] [2024-07-31T12:12:22.877Z] [unzip] Processing entry: server\server.mjs
+[debug] [2024-07-31T12:12:22.877Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server
+[debug] [2024-07-31T12:12:22.878Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\server.mjs
+[debug] [2024-07-31T12:12:22.894Z] [unzip] Entry: server/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-07-31T12:12:22.894Z] [unzip] Processing entry: server\assets\
+[debug] [2024-07-31T12:12:22.894Z] [unzip] mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\assets\
+[debug] [2024-07-31T12:12:22.895Z] [unzip] Entry: server/assets/multipart-parser-DGCUZdXu.mjs.map (compressed_size=4791 bytes, uncompressed_size=17918 bytes)
+[debug] [2024-07-31T12:12:22.895Z] [unzip] Processing entry: server\assets\multipart-parser-DGCUZdXu.mjs.map
+[debug] [2024-07-31T12:12:22.895Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\assets
+[debug] [2024-07-31T12:12:22.896Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\assets\multipart-parser-DGCUZdXu.mjs.map
+[debug] [2024-07-31T12:12:22.898Z] [unzip] Entry: server/assets/multipart-parser-DGCUZdXu.mjs (compressed_size=2621 bytes, uncompressed_size=10390 bytes)
+[debug] [2024-07-31T12:12:22.899Z] [unzip] Processing entry: server\assets\multipart-parser-DGCUZdXu.mjs
+[debug] [2024-07-31T12:12:22.899Z] [unzip] else mkdir: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\assets
+[debug] [2024-07-31T12:12:22.900Z] [unzip] deflating: C:\Users\netflix\.cache\firebase\emulators\ui-v1.13.0\server\assets\multipart-parser-DGCUZdXu.mjs

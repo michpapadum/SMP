@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+</head>
+<body class="ent">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbRnaxAm0jlT7XZLhD6-H6yu8K_DBMBXs",
+            authDomain: "smp-24rgss08-32e9d.firebaseapp.com",
+            databaseURL: "https://smp-24rgss08-32e9d-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "smp-24rgss08-32e9d",
+            storageBucket: "smp-24rgss08-32e9d.appspot.com",
+            messagingSenderId: "95759036563",
+            appId: "1:95759036563:web:8303c21f7311e00c5a9d66",
+            measurementId: "G-GYEMHP4RYZ"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getFirestore();
+    
+        // Check if user is authenticated
+        onAuthStateChanged(auth, async (user) => {
+            console.log("Auth state changed:", user); // Debugging line
+            if (user) {
+                // User is signed in
+                const uid = user.uid;
+                console.log("User UID:", uid); // Debugging line
+                const userDoc = await getDoc(doc(db, "users", uid));
+                if (userDoc.exists()) {
+                    const userData = userDoc.data();
+                    // Display user progress or other content
+                    document.getElementById('content').innerHTML = `Welcome, ${user.email}!`;
+                } else {
+                    console.log("No such document!");
+                }
+            } else {
+                // No user is signed in, redirect to login page
+                console.log("No user signed in, redirecting to login.html"); // Debugging line
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+
+    <div class="header">
+        <img src="/images/handprints2.png" width="100%" height="100%">
+        <text class="he1">Little Stretch Physiotherapy</text>
+        <div class="tabdrop">
+            <img src="/images/3lines.png" width="60px" height="60px">
+            <div class="tabs">
+                <a href="index.html" class="atab">Home</a>
+                <a href="myprogress.html" class="atab">My Progress</a>
+                <a href="guidebook.html" class="atab">Guidebook</a>
+                <a href="exerciselib.html" class="atab">Exercise Library</a>
+                <a href="uploadpg.html" class="atab">Upload Exercises</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="intro">
+        <!-- Content will be injected here by JavaScript -->
+    </div>
+
+    <div class="intro">
+        <text> 
+        With the increasing demand for paediatric physiotherapy in Singapore and the lack of such 
+        specialized services, Little Stretch aims to provide accessible and affordable physiotherapy 
+        for all children. Little Stretch is committed to providing quality online paediatric 
+        physiotherapy to allow your little ones to receive timely physiotherapy exercises 
+        to stretch their body and improve its function. We specialize in interactive and quality 
+        exercises, that: 
+        • Address functional impairments, including muscle tone, strength, coordination, balance and posture, mobility and achieving an optimal range of motion
+        • Provides user-friendly guides to hands-on techniques on exercises
+        • Tracks movement and provides feedback in real time
+        • Personalized exercises 
+        • Makes receiving physiotherapy fun and easy
+        • Make seeking appropriate physiotherapy for your little ones convenient and worry-free
+        </text>
+    </div>
+
+    <div>
+        <text class="tx1"> Our Services</text>
+    </div>
+
+    <div class="intro2">
+        <img src="/images/Interactive.png">
+        <img src="/images/Personalised.png">
+        <img src="/images/Guidance.png">
+        <style>
+            
+        </style>
+
+        <text class="tx2">
+        Interactive Exercises          Personalised Experience        Guidance for Caregivers
+        </text>
+
+        <text class="tx3" style="margin-left: -40px">
+            • Flexibility exercises   
+            • Balance exercises              
+            • Strengthening exercises 
+            • Exergames 
+        </text>
+        <text class="tx3" style="margin-left:375px">
+            • Progress tracking
+            • Information regarding exercise 
+              completed, confidence score, 
+              number of times exercise was 
+              done
+        </text>
+        <text class="tx3" style="margin-left:840px">
+            • Learn how to properly guide
+              your child 
+            • Simple and easy to follow
+            • Includes pictorial aid!
+        </text>
+
+        <a href="exerciselib.html">Check out the exercises available!</a>
+        <a href="myprogress.html">Take a look at your progress so far!</a>
+        <a href="guidebook.html">Learn how to guide your child!</a>
+    </div>
+
+    <div class="intro3">
+        <img src="/images/Exlib.png">
+        <text class="intro3bold">Access numerous free exercise videos 
+                at the tip of your fingers </text>
+        <text class="intro3norm">
+            You don't have to make the arduous journey with your child 
+            to and fro from your house to the clinic. Instead, you can
+            access our wide array of exercise videos, with audio 
+            instructions and a video feed for guidance. It's all just a
+            tap away. Wish to carry out physiotherapy exercises? All you
+            have to do is log on to our website anytime, anywhere, and 
+            your child can pick up from where they left, or try their hand
+            at something new. 
+        </text>
+    </div>
+    
+    <div class="intro3">
+        <img src="/images/Happyex.png" style="padding-top:300px">
+        <text class="intro3bold2">
+        Relief is closer than you think </text>
+        <text class="intro3norm2">
+        No one should have to live a life of pain. And that's what 
+        Little Stretch is all about--making sure that your child lives
+        a full life without any aches and pains bothering them. That 
+        may seem hard to achieve, but with Little Stretch's tailored 
+        website, we have just what your child needs. 
+
+        Unlike in-person appointments, which are scheduled every now 
+        and then, the web-based method of physiotherapy allows for 
+        more consistent efforts.
+        Once every day for 30 minutes is all it takes to see some 
+        visible progress in 4-6 weeks. 
+        </text>
+    </div>
+
+    <div class="intro4">
+        <img src="/images/Flappy.png">
+        <text class="intro4tx1">
+            Exergames
+        </text>
+        <text class="intro4norm">
+        Who said physiotherapy can't be fun? 
+        With our plethora of exciting 
+        and engaging games, we are out to 
+        change that perspective! Your child  
+        will be able to play classic games like 
+        Flappy Bird, all while keeping up with
+        their physiotherapy needs. This way, 
+        physiotherapy will be something that 
+        they look forward to, and will 
+        enthusiastically carry out. 
+        </text>
+        <img src="/images/Guidebook.jpg" class="intro4lazimg">
+        <text class="intro4tx2">Specialised 
+                                                                         Caregiver Handbook</text>
+        <text class="intro4norm2">
+        Afraid that your child may need 
+        guidance to carry out the exercises 
+        accurately, yet you're equally 
+        clueless about physiotherapy?
+        Well, fret not! Apart from 
+        our video feed and audio instructions,
+        which will make following along easy,
+        we also have a handbook. 
+        This handbook can be accessed by 
+        parents and caregivers alike, with an
+        audio that can help read it aloud. 
+        It's short and simple, sure to make 
+        you an expert in guiding!  
+        </text>
+    </div>
+</body>
+</html>
+

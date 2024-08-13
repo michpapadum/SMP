@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Little Stretch Physiotherapy</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <script src="exercises.js"></script>
+  <style>
+    .back-button {
+      width: 200px;
+      height: 60px;
+      font-size: 18px;
+      color: white;
+      background-color: rgb(15, 46, 46);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 60px; /* Center text vertically */
+      text-decoration: none;
+      position: fixed; /* Position fixed to place it at the bottom */
+      bottom: 20px; /* Adjust as needed */
+      left: 20px; /* Adjust as needed */
+    }
+    .back-button:hover {
+      background-color: rgb(10, 40, 40);
+    }
+  </style>
+</head>
+
+<body class="ent">
+  <div class="header">
+    <img src="/images/handprints2.png" width="100%" height="100%">
+    <text class="he1" style="padding-left:100px;">Exercises</text>
+    <div class="tabdrop">
+      <img src="/images/3lines.png" width="60px" height="60px">
+      <div class="tabs">
+        <a href="index.html" class="atab">Home</a>
+        <a href="myprogress.html" class="atab">My Progress</a>
+        <a href="guidebook.html" class="atab">Guidebook</a>
+        <a href="exerciselib.html" class="atab">Exercise Library</a>
+        <a href="uploadpg.html" class="atab">Upload Exercises</a>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="chooseex">
+    <button class="anexercise" onclick="Exercise1()">
+      Stretch Right
+    </button>
+    <button class="anexercise" onclick="Exercise2()" style="margin-left:100px">
+      Stretch Left
+    </button>
+    <button class="anexercise" onclick="Exercise3()" style="margin-top:50px">
+      Lunge Right
+    </button>
+    <button class="anexercise" onclick="Exercise4()" style="margin-top:50px; margin-left:100px;">
+      Lunge Left
+    </button>
+    <button class="anexercise" onclick="Exercise5()">
+      Jumping Jacks
+    </button>
+    <button class="anexercise" onclick="Exercise6()" style="margin-top:50px; margin-left: 100px;">
+      Lift Right Leg
+    </button>
+    <button class="anexercise" onclick="Exercise7()">
+      Lift Left Leg
+    </button>
+    <button class="anexercise" onclick="Exercise8()" style="margin-top:50px; margin-left: 100px;">
+      Stretch Neck To Right
+    </button>
+    <button class="anexercise" onclick="Exercise9()">
+      Stretch Neck To Left
+    </button>
+    <button class="anexercise" onclick="Exercise10()" style="margin-top:50px; margin-left: 100px;">
+      Squats
+    </button>
+    <button class="anexercise" onclick="Exercise11()">
+      Sidestep To Left
+    </button>
+    <button class="anexercise" onclick="Exercise12()" style="margin-top:50px; margin-left: 100px;">
+      Sidestep to Right
+    </button>
+  </div>
+
+  <a href="exerciselib.html" class="back-button">Back</a> <!-- Back button positioned absolutely -->
+
+  <script>
+    function Exercise1() {
+      window.location.href = "gameinfo1.html"; // Change to the new URL
+    }
+
+    function Exercise2() {
+      window.location.href = "gameinfo2.html"; 
+    }
+
+    function Exercise3() {
+      window.location.href = "gameinfo3.html";
+    }
+
+    function Exercise4() {
+      window.location.href = "gameinfo4.html"; 
+    }
+
+    function Exercise5(){
+      window.location.href = "gameinfo5.html"
+    }
+
+    function Exercise6(){
+      window.location.href = "gameinfo6.html"
+    }
+
+    function Exercise7(){
+      window.location.href = "gameinfo7.html"
+    }
+
+    function Exercise8(){
+      window.location.href = "gameinfo8.html"
+    }
+
+    function Exercise9(){
+      window.location.href = "gameinfo9.html"
+    }
+
+    function Exercise10(){
+      window.location.href = "gameinfo10.html"
+    }
+
+    function Exercise11(){
+      window.location.href = "gameinfo11.html"
+    }
+    
+    function Exercise12(){
+        window.location.href = "gameinfo12.html"
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+/* Entirety */
+.ent {
+    background-color: rgb(235, 209, 163);
+}
+
+/* For header and menu bar */
+.header {
+    white-space: pre;
+    width: 100%;
+    height: 300px;
+}
+
+.header img {
+    object-fit: cover;
+    float: left;
+}
+
+.he1 {
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 25%;
+    font-family: Verdana;
+    font-weight: bold;
+    color: white;
+    font-size: 300%;
+}
+
+.tabdrop {
+    position: relative;
+}
+
+.tabdrop img {
+    z-index: 3;
+    position: fixed;
+    top: 60px;
+    left: 5px;
+}
+
+.tabdrop:hover .tabs {
+    display: block;
+}
+
+.tabs {
+    position: fixed;
+    z-index: 2;
+    top: 60px;
+    left: 5px;
+    display: none;
+    border: 1px solid #7794ed;
+    background-color: #a1b1ff;
+    width: 15%;
+    max-height: 300px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tabs .atab {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: 150%;
+    border-bottom: 1px solid #ddd; /* Optional: adds a border between items */
+}
+
+.tabs .atab:hover {
+    background-color: #bccdff;
+}
+
+.atab {
+    cursor: pointer;
+    display: block;
+    white-space: pre;
+    font-size: 150%;
+    position: relative;
+    text-decoration: none;
+}
+
+/* Home page */
+.intro {
+    position: relative;
+    margin-right: 100px;
+    margin-top: 60px;
+    margin-left: 100px;
+    font-size: 30px;
+    font-family: Georgia;
+    white-space: pre;
+    line-height: 60px;
+}
+
+.tx1 {
+    margin-left: 450px;
+    position: relative;
+    top: 100px;
+    font-family: Impact;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.intro2 {
+    position: relative;
+    top: 150px;
+}
+
+.intro2 img {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    margin-left: 40px;
+}
+
+.tx2 {
+    margin-left: 450px;
+    position: relative;
+    left: 30px;
+    font-family: Impact;
+    font-size: 40px;
+    font-weight: bold;
+    white-space: pre;
+}
+
+.tx3 {
+    position: absolute;
+    white-space: pre;
+    font-size: 25px;
+    font-family: 'Times New Roman';
+}
+
+.intro2 a {
+    white-space: pre;
+    position: relative;
+    margin-left: 30px;
+    top: 200px;
+    border-style: solid;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.intro2 a:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.intro3 {
+    width: 100%;
+    white-space: pre;
+    padding-top: 400px;
+    padding-left: 50px;
+}
+
+.intro3 img {
+    position: absolute;
+}
+
+.intro3bold {
+    position: relative;
+    font-size: 200%;
+    margin-right: 90px;
+    line-height: 50px;
+    font-family: Verdana;
+    font-weight: bold;
+    float: right;
+}
+
+.intro3norm {
+    padding-top: 50px;
+    position: absolute;
+    margin-left: 450px;
+    font-size: 200%;
+    line-height: 50px;
+}
+
+.intro3bold2 {
+    padding-top: 250px;
+    position: relative;
+    font-size: 200%;
+    margin-right: 220px;
+    line-height: 50px;
+    font-family: Verdana;
+    font-weight: bold;
+    float: right;
+}
+
+.intro3norm2 {
+    padding-top: 300px;
+    position: absolute;
+    margin-left: 500px;
+    font-size: 200%;
+    line-height: 50px;
+}
+
+.intro4 {
+    white-space: pre;
+    padding-top: 1000px;
+    margin-left: 100px;
+}
+
+.intro4 img {
+    width: 600px;
+    height: 600px;
+}
+
+.intro4norm {
+    position: relative;
+    top: -100px;
+    font-size: 200%;
+    font-family: Verdana;
+    line-height: 50px;
+}
+
+.intro4lazimg {
+    position: relative;
+    top: -1430px;
+    left: 700px;
+}
+
+.intro4tx1 {
+    position: relative;
+    top: -10px;
+    left: 50px;
+    font-family: Impact;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.intro4tx2 {
+    margin-left: 850px;
+    position: relative;
+    top: -1400px;
+    font-family: Impact;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.intro4norm2 {
+    position: relative;
+    top: -1400px;
+    left: 700px;
+    font-size: 200%;
+    font-family: Verdana;
+    line-height: 50px;
+}
+
+/* Exercise Library */
+.anexercise {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    border-radius: 20px;
+    width: 40%;
+    height: 40%;
+    background-color: rgb(15, 46, 46);
+}
+.anexercise span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    font-size: 120%; /* Adjust font size */
+    font-weight: bold;
+}
+.anexercise /* for text */ {
+    color: white;
+    font-size: 200%;
+    font-family: Verdana;
+}
+.anexercise img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the button */
+    opacity: 0.5; /* Translucent image */
+}
+
+/* Upload Video */
+.uplvid {
+    position: relative;
+    top: 100px;
+    left: 50px;
+    width: 800px;
+    height: 400px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.uplbutton {
+    padding-left: 0px;
+    padding-top: 100px;
+}
+
+.upllabel {
+    padding-left: 200px;
+}
+
+.uplvid img {
+    object-fit: cover;
+}
+
+
+
+
+
+
