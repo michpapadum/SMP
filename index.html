@@ -26,28 +26,31 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth();
         const db = getFirestore();
-    
-        // Check if user is authenticated
-        onAuthStateChanged(auth, async (user) => {
-            console.log("Auth state changed:", user); // Debugging line
-            if (user) {
-                // User is signed in
-                const uid = user.uid;
-                console.log("User UID:", uid); // Debugging line
-                const userDoc = await getDoc(doc(db, "users", uid));
-                if (userDoc.exists()) {
-                    const userData = userDoc.data();
-                    // Display user progress or other content
-                    document.getElementById('content').innerHTML = `Welcome, ${user.email}!`;
-                } else {
-                    console.log("No such document!");
-                }
-            } else {
-                // No user is signed in, redirect to login page
-                console.log("No user signed in, redirecting to login.html"); // Debugging line
-                window.location.href = "login.html";
-            }
-        });
+        
+   // Check if user is authenticated
+onAuthStateChanged(auth, async (user) => {
+    console.log("Auth state changed:", user); // Debugging line
+    if (user) {
+        // User is signed in
+        const uid = user.uid;
+        console.log("User UID:", uid); // Debugging line
+        const userDoc = await getDoc(doc(db, "users", uid));
+        if (userDoc.exists()) {
+            const userData = userDoc.data();
+            // Use email or fallback to 'Guest' if email is null
+            const userName = user.email ? user.email : "Guest";
+            // Display user progress or other content
+            document.getElementById('content').innerHTML = `Welcome, ${userName}!`;
+        } else {
+            console.log("No such document!");
+        }
+    } else {
+        // No user is signed in, redirect to login page
+        console.log("No user signed in, redirecting to login.html"); // Debugging line
+        window.location.href = "login.html";
+    }
+});
+
     </script>
 
     <div class="header">
