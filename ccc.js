@@ -7,6 +7,8 @@
 ml5 Example
 PoseNet example using p5.js
 === */
+let currlabel = 0;
+let adderyes = false;
 let video;
 let poseNet;
 let pose;
@@ -19,38 +21,47 @@ let poseLabelConfidence = 100;
 let brain;
 let state = 'waiting';
 let targetLabel;
-
+let elmo = 6;
+let cheese = 2;
 
 function keyPressed() {
   if (key == 's') {
       brain.saveData();
   } else {
     targetLabel = key;
+    /*if (key == 'a')
+    {
+      targetLabel = '0';
+    }
+    else
+    {
+      targetLabel = '1';
+    }*/
     setTimeout(function() {
         console.log('collecting');
         state = 'collecting';
+        adderyes=false;
         setTimeout(function() {
             console.log('not collecting');
             state = 'waiting';
-        }, 10000);
+        }, 10000);//change to twenty
     }, 2000);
   }
   if (key=='n')
   {
-    brain.loadData('lll.json', dataReady);
+    brain.loadData('frame2.json', dataReady);
   }
 }
 
-
-function modelReady() {
-    select("#status").html("Model Loaded");
-  }
-
-function setup() {
+function setup() 
+{
     createCanvas(640, 480);
     video = createCapture(VIDEO);
     video.hide();
-    poseNet = ml5.poseNet(video, modelReady);
+    poseNet = ml5.poseNet(video, function()
+    {
+      select("#status").html("Model Loaded");
+    });
     poseNet.on('pose', function(results) {
       poses = results;
     });
@@ -69,21 +80,21 @@ function setup() {
       weights:'model1/model.weights.bin',
     };
   
-  brain.load(modelInfo, brainLoaded);
+  /*brain.load(modelInfo, function()
+  {
+    console.log('pose classification ready!');
+    classifyPose();
+  });*/
 
   video.hide();
 }
 
 
-function brainLoaded(){
-    console.log('pose classification ready!');
-    classifyPose();
-}
 
 function classifyPose()
 {
-    console.log('abcdefg');
-    console.log('hijklmnop',poseLabel);
+    //console.log('abcdefg');
+    //console.log('hijklmnop',poseLabel);
     if (poses.length>0)
     {
       const pose = poses[0].pose;
@@ -218,8 +229,17 @@ function gotPoses(poses)
   
         inval.push(secval);
         let compy = calang(inval);
-        //console.log(compy);
+        /*if (targetLabel == 'a')
+        {
+          targetLabel = 0;
+        }
+        else
+        {
+          targetLabel = 1;
+        }*/
+        targetLabel = currlabel.toString();
         brain.addData(compy,[targetLabel]);
+        console.log(targetLabel);
       }
     }
 }
@@ -257,15 +277,10 @@ function calang(myvalues)
     currang -= (atan2(y,x));
     retval.push(currang);
   }
-  //console.log('checkpojnt 1');
   return retval;
 }
 
 
-function brainLoaded() {
-  console.log('pose classification ready!');
-  classifyPose();
-}
 
 
 
@@ -286,7 +301,37 @@ function draw() {
   translate(width, 0);
   scale(-1, 1)
   drawKeypoints();
+
+  if (adderyes == false && state == 'collecting')
+  {
+    adderyes=true;
+    adder();
+  }
   //drawSkeleton();
+}
+
+function adder()
+{
+  let timmer = (10000/cheese);
+  if (state=='collecting')
+  {
+    setTimeout(function()
+    {
+      if (currlabel == ((cheese-1) * elmo))
+      {
+        console.log('start of new exercise');
+        currlabel = 0;
+      }
+      else
+      {
+        currlabel += elmo;
+      }
+    },timmer);
+  }
+  setTimeout(function()
+  {
+    adderyes=false;
+  },timmer);
 }
 
 
@@ -371,3 +416,5 @@ function drawSkeleton() {
   }
 }
 
+
+//extra
