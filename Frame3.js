@@ -156,9 +156,8 @@ function updateCount(poseLabel)
     textAlign(CENTER);
     text("Confidence level =",width-300,height-50);
     text(Math.round(poseLabelConfidence*100)/100, width-80, height-50);
-    if (currat==12){
+    if (lastLabel === 'L' && poseLabel==='0'){
       count++;
-      currat = 0;
   
       updateDisplay();
       //console.log("count is:",count);
@@ -169,7 +168,13 @@ function updateCount(poseLabel)
 function updateDisplay()
 {
     document.getElementById('exercise-count').innerText= count;
+
+    if (count >= 10)
+    {
+        window.location.href = "exercisesummary1.html";
+    }
 }
+
 
 function dataReady() {
   brain.normalizeData();
