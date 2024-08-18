@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise Summary</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional inline styles for the summary page */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgb(235, 209, 163);
+      font-family: Verdana, sans-serif;
+      font-weight: bold;
+      color: #333;
+    }
+    .container h1 {
+      margin-bottom: 20px;
+      font-size: 2.5em; /* Adjust size as needed */
+    }
+    .container p {
+      font-size: 20px;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 20px;
+      font-family: Georgia, serif;
+      color: #333;
+      font-weight: 100;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #007BFF;
+      color: white;
+      margin: 5px;
+      transition: background-color 0.3s;
+    }
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Game Summary</h1>
+    <p id="score-display">Your final score: 0</p>
+    <div class="button-container">
+      <button onclick="goHome()">Home</button>
+      <button onclick="goExercise()">Other Exercises</button>
+      <button onclick="replayGame()">Replay</button>
+      <button onclick="goLibrary()">Exercise Game Library</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+    import { getFirestore, doc, updateDoc, arrayUnion, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAbRnaxAm0jlT7XZLhD6-H6yu8K_DBMBXs",
+      authDomain: "smp-24rgss08-32e9d.firebaseapp.com",
+      databaseURL: "https://smp-24rgss08-32e9d-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "smp-24rgss08-32e9d",
+      storageBucket: "smp-24rgss08-32e9d.appspot.com",
+      messagingSenderId: "95759036563",
+      appId: "1:95759036563:web:8303c21f7311e00c5a9d66",
+      measurementId: "G-GYEMHP4RYZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getFirestore();
+
+    // Define functions globally
+    window.goHome = function() {
+      console.log("Navigating to Home"); // Debugging line
+      window.location.href = "exerciselib.html";
+    }
+
+    window.goExercise = function() {
+      console.log("Navigating to Other Exercises"); // Debugging line
+      window.location.href = "exercises.html";
+    }
+
+    window.replayGame = function() {
+      console.log("Navigating to Replay"); // Debugging line
+      window.location.href = "exercise2.html";
+    }
+
+    window.goLibrary = function() {
+      console.log("Navigating to Exergame Library"); // Debugging line
+      window.location.href = "exergames.html";
+    }
+
+    function getScore() {
+      return localStorage.getItem('finalScore') || '0';
+    }
+
+    // Document ready function
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('score-display').textContent = `Your final score: ${getScore()}`;
+    });
+
+    // Handle Firebase authentication and Firestore update
+    window.onload = function() {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const uid = user.uid;
+      const score = parseInt(getScore());
+
+      async function completeGame(score) {
+        const gameData = {
+          type: "Stretch Left Exercise",
+          date: new Date().toISOString(),
+          score: score
+        };
+        
+        try {
+          const userDocRef = doc(db, "users", uid);
+          const userDoc = await getDoc(userDocRef);
+
+          if (!userDoc.exists()) {
+            // If the document does not exist, create it with an empty progress array
+            await setDoc(userDocRef, { progress: [] });
+          }
+
+          // Now update the document with the new game data
+          await updateDoc(userDocRef, {
+            progress: arrayUnion(gameData)
+          });
+
+          console.log("Game progress saved successfully.");
+        } catch (error) {
+          console.error("Error updating game progress: ", error);
+          alert("Failed to save progress. Please try again.");
+        }
+      }
+
+      completeGame(score);
+    } else {
+      window.location.href = "login.html";
+    }
+  });
+}
+
+      // Initialize the Speech Recognition API
+      if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onstart = function() {
+          console.log('Speech recognition service has started');
+        };
+
+        recognition.onresult = function(event) {
+          const transcript = event.results[0][0].transcript.trim().toLowerCase();
+          console.log(`You said: ${transcript}`);
+
+          if (transcript === 'home') {
+            console.log('Executing goHome()');
+            goHome();
+          } else if (transcript === 'other exercises') {
+            console.log('Executing goExercise()');
+            goExercise();
+          } else if (transcript === 'replay') {
+            console.log('Executing replayGame()');
+            replayGame();
+          } else if (transcript === 'exercise game library') {
+            console.log('Executing goLibrary()');
+            goLibrary();
+          } else {
+            console.log('Command not recognized');
+          }
+        };
+
+        recognition.onerror = function(event) {
+          console.error('Speech recognition error', event.error);
+        };
+
+        recognition.onend = function() {
+          console.log('Speech recognition service stopped. Restarting...');
+          recognition.start(); // Restart the recognition
+        };
+
+        recognition.start();
+      } else {
+        console.error('Speech Recognition API not supported');
+      }
+    
+  </script>
+</body>
+</html>
+
