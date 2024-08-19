@@ -192,7 +192,8 @@ function updateCount(poseLabel){
     updateDisplay();
     console.log("count is:",count);
 
-    if (count >= 5) {
+    if (count >= 5)
+      localStorage.setItem('finalCount;, count);
 
       window.location.href="exercisesummary1.html"
     }
