@@ -122,13 +122,13 @@
   onAuthStateChanged(auth, async (user) => {
     if (user) {
       const uid = user.uid;
-      const score = parseInt(getScore());
+      const score = parseInt(localStorage.getItem('finalCount'))|| 0;
 
-      async function completeGame(score) {
+      async function completeGame(finalCount) {
         const gameData = {
           type: "Stretch Right Exercise",
           date: new Date().toISOString(),
-          score: score
+          score: finalCount
         };
         
         try {
