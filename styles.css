@@ -1,6 +1,6 @@
 /* Entirety */
 .ent {
-    background-color: rgb(235, 209, 163);
+    background-color: rgb(241, 234, 221);
 }
 
 /* For header and menu bar */
@@ -22,7 +22,7 @@
     left: 25%;
     font-family: Verdana;
     font-weight: bold;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 300%;
 }
 
@@ -219,7 +219,7 @@
 
 .intro4lazimg {
     position: relative;
-    top: -1430px;
+    top: -1578px;
     left: 700px;
 }
 
@@ -235,7 +235,7 @@
 .intro4tx2 {
     margin-left: 850px;
     position: relative;
-    top: -1400px;
+    top: -1550px;
     font-family: Impact;
     font-size: 60px;
     font-weight: bold;
@@ -243,7 +243,7 @@
 
 .intro4norm2 {
     position: relative;
-    top: -1400px;
+    top: -1600px;
     left: 700px;
     font-size: 200%;
     font-family: Verdana;
@@ -254,18 +254,20 @@
 .anexercise {
     position: relative;
     top: 50px;
-    left: 50px;
+    left: 0px;
     border-radius: 20px;
-    width: 40%;
-    height: 40%;
-    background-color: rgb(15, 46, 46);
+    width: 30%;
+    height:50%;
+    background-color: rgb(0, 0, 0);
 }
+
+
 .anexercise span {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white; /* Text color */
+    color: rgb(255, 255, 255); /* Text color */
     font-size: 120%; /* Adjust font size */
     font-weight: bold;
 }
