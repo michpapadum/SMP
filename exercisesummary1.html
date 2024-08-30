@@ -58,7 +58,7 @@
 <body>
   <div class="container">
     <h1>Game Summary</h1>
-    <p id="score-display">Number of Exercises Completed: 0</p>
+    <p id="score-display">Your final score: 5</p>
     <div class="button-container">
       <button onclick="goHome()">Home</button>
       <button onclick="goExercise()">Other Exercises</button>
@@ -94,7 +94,7 @@
     }
 
     window.goExercise = function() {
-      console.log("Navigating to Other Exercises"); // Debugging line
+      console.log("Navigating to Other Games"); // Debugging line
       window.location.href = "exercises.html";
     }
 
@@ -109,103 +109,106 @@
     }
 
     function getScore() {
-      return localStorage.getItem('finalScore') || '0';
+      // Check if finalScore exists in localStorage, else default to '5'
+      return localStorage.getItem('finalScore') || '5';
     }
 
     // Document ready function
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('score-display').textContent = `Number of Exercises Completed: ${getScore()}`;
+      // Always set the score to 5 for testing purposes
+      localStorage.setItem('finalScore', '5');
+      document.getElementById('score-display').textContent = `Your final score: ${getScore()}`;
     });
 
     // Handle Firebase authentication and Firestore update
     window.onload = function() {
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      const uid = user.uid;
-      const score = parseInt(localStorage.getItem('finalCount'))|| 0;
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const uid = user.uid;
+          const score = parseInt(getScore());
 
-      async function completeGame(finalCount) {
-        const gameData = {
-          type: "Stretch Right Exercise",
-          date: new Date().toISOString(),
-          score: finalCount
-        };
-        
-        try {
-          const userDocRef = doc(db, "users", uid);
-          const userDoc = await getDoc(userDocRef);
+          async function completeGame(score) {
+            const gameData = {
+              type: "Stretch Right Exercise",
+              date: new Date().toISOString(),
+              score: score
+            };
+            
+            try {
+              const userDocRef = doc(db, "users", uid);
+              const userDoc = await getDoc(userDocRef);
 
-          if (!userDoc.exists()) {
-            // If the document does not exist, create it with an empty progress array
-            await setDoc(userDocRef, { progress: [] });
+              if (!userDoc.exists()) {
+                // If the document does not exist, create it with an empty progress array
+                await setDoc(userDocRef, { progress: [] });
+              }
+
+              // Now update the document with the new game data
+              await updateDoc(userDocRef, {
+                progress: arrayUnion(gameData)
+              });
+
+              console.log("Game progress saved successfully.");
+            } catch (error) {
+              console.error("Error updating game progress: ", error);
+              alert("Failed to save progress. Please try again.");
+            }
           }
 
-          // Now update the document with the new game data
-          await updateDoc(userDocRef, {
-            progress: arrayUnion(gameData)
-          });
-
-          console.log("Game progress saved successfully.");
-        } catch (error) {
-          console.error("Error updating game progress: ", error);
-          alert("Failed to save progress. Please try again.");
+          completeGame(score);
+        } else {
+          window.location.href = "login.html";
         }
-      }
-
-      completeGame(score);
-    } else {
-      window.location.href = "login.html";
+      });
     }
-  });
-}
 
-      // Initialize the Speech Recognition API
-      if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        recognition.lang = 'en-US';
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
+    // Initialize the Speech Recognition API
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
 
-        recognition.onstart = function() {
-          console.log('Speech recognition service has started');
-        };
+      recognition.onstart = function() {
+        console.log('Speech recognition service has started');
+      };
 
-        recognition.onresult = function(event) {
-          const transcript = event.results[0][0].transcript.trim().toLowerCase();
-          console.log(`You said: ${transcript}`);
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript.trim().toLowerCase();
+        console.log(`You said: ${transcript}`);
 
-          if (transcript === 'home') {
-            console.log('Executing goHome()');
-            goHome();
-          } else if (transcript === 'other exercises') {
-            console.log('Executing goExercise()');
-            goExercise();
-          } else if (transcript === 'replay') {
-            console.log('Executing replayGame()');
-            replayGame();
-          } else if (transcript === 'exercise game library') {
-            console.log('Executing goLibrary()');
-            goLibrary();
-          } else {
-            console.log('Command not recognized');
-          }
-        };
+        if (transcript === 'home') {
+          console.log('Executing goHome()');
+          goHome();
+        } else if (transcript === 'other exercises') {
+          console.log('Executing goExercise()');
+          goExercise();
+        } else if (transcript === 'replay') {
+          console.log('Executing replayGame()');
+          replayGame();
+        } else if (transcript === 'exercise game library') {
+          console.log('Executing goLibrary()');
+          goLibrary();
+        } else {
+          console.log('Command not recognized');
+        }
+      };
 
-        recognition.onerror = function(event) {
-          console.error('Speech recognition error', event.error);
-        };
+      recognition.onerror = function(event) {
+        console.error('Speech recognition error', event.error);
+      };
 
-        recognition.onend = function() {
-          console.log('Speech recognition service stopped. Restarting...');
-          recognition.start(); // Restart the recognition
-        };
+      recognition.onend = function() {
+        console.log('Speech recognition service stopped. Restarting...');
+        recognition.start(); // Restart the recognition
+      };
 
-        recognition.start();
-      } else {
-        console.error('Speech Recognition API not supported');
-      }
-    
+      recognition.start();
+    } else {
+      console.error('Speech Recognition API not supported');
+    }
   </script>
 </body>
 </html>
+
 
