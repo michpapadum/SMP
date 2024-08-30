@@ -87,7 +87,7 @@
     margin-top: 60px;
     margin-left: 100px;
     font-size: 30px;
-    font-family: Georgia;
+    font-family: Verdana;
     white-space: pre;
     line-height: 60px;
 }
@@ -127,7 +127,7 @@
     position: absolute;
     white-space: pre;
     font-size: 25px;
-    font-family: 'Times New Roman';
+    font-family: Verdana;
 }
 
 .intro2 a {
@@ -164,7 +164,7 @@
 .intro3bold {
     position: relative;
     font-size: 200%;
-    margin-right: 90px;
+    margin-right: 200px;
     line-height: 50px;
     font-family: Verdana;
     font-weight: bold;
@@ -183,7 +183,7 @@
     padding-top: 250px;
     position: relative;
     font-size: 200%;
-    margin-right: 220px;
+    margin-right: 240px;
     line-height: 50px;
     font-family: Verdana;
     font-weight: bold;
