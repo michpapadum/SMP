@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Little Stretch Physiotherapy</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <script src="exercises.js"></script>
+</head>
+
+<body class="ent">
+  <div class="header">
+    <img src="/images/banner.png" width="100%" height="100%">
+    <text class="he1" style="padding-left:100px;">Exercise Library</text>
+    <div class="tabdrop">
+      <img src="/images/3lines.png" width="60px" height="60px">
+      <div class="tabs">
+        <a href="index.html" class="atab">Home</a>
+        <a href="myprogress.html" class="atab">My Progress</a>
+        <a href="guidebook.html" class="atab">Guidebook</a>
+        <a href="exerciselib.html" class="atab">Exercise Library</a>
+        <a href="uploadpg.html" class="atab">Upload Exercises</a>
+     
+      </div>
+    </div>
+  </div>
+
+  <div class="chooseex">
+    <button class="anexercise" onclick="Exercises()">
+      <img src="/images/exercise.webp" style="opacity: 0.5;" width="200px" height="200px"> <!-- Translucent Image -->
+      <span>Exercises</span>
+    </button>
+  
+    <button class="anexercise" onclick="Exergames()" style="margin-left:120px">
+      <img src="/images/exergame.jpg" style="opacity: 0.5;" width="200px" height="200px"> <!-- Translucent Image -->
+      <span>Exergames</span> 
+    </button>
+    
+  </div>
+
+  <script>
+    function Exercises() {
+      window.location.href = "preex.html"; // Change to the new URL
+    }
+
+    function Exergames() {
+      window.location.href = "exergames.html"; 
+    }
+  </script>
+  
+</body>
+
+</html>
+
