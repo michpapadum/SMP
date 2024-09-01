@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <!--<script type="module" src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.13/firebase-storage.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"></script> 
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+        <script src="https://unpkg.com/ml5@0.8.0/dist/ml5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
+
+
+    
+        <style>
+
+            .forupl
+            {
+                font-size:50px;
+                font-family:fantasy;
+                position:relative;
+            }
+            .viddy
+            {
+                display:block;
+            }
+            .nicebutton:hover
+            {
+                background-color:rgb(164, 146, 124);
+            }
+            .nicebutton
+            {
+                position:relative;
+                width:300px;
+                border-radius:200px;
+                padding: 32px 20px;
+                margin-left: 200px;
+                margin-top:50px;
+                font-size:20px;
+                background-color: cornsilk;
+            }
+
+            .button1
+            {
+                position:relative;
+                top: -450px;
+                left:700px;
+            }
+
+            .button2
+            {
+                position:relative;
+                top: -250px;
+                left:200px;
+            }
+
+            .button3
+            {
+                position:relative;
+                top: -200px;
+                left:700px;
+            }
+
+            .currently
+            {
+                position:relative;
+                left:200px;
+                top:50px;
+                font-size:50px;
+                font-family:fantasy;
+            }
+
+            #acanvas
+            {
+                position:relative;
+                top:100px;
+                left:50px;
+                border: 5px solid #333;
+                border-radius: 15px;
+            }
+
+            .uplfiles
+            {
+                position:relative;
+                left:400px;
+            }
+            
+            .additionalinfo
+            {
+                position:relative;
+                left:450px;
+                top:-100px;
+                padding-bottom:50px;
+            }
+
+            .alabel
+            {
+                font-size:30px;
+                font-family:fantasy;
+            }
+        </style>
+    </head>
+
+    <body class="ent">
+    <script src="upload1.js" class="viddy"></script>
+    <div class = "header">
+
+    <img src="/images/banner.png" width="100%" height="100%">
+    <text class="he1" style="padding-left:150px">Upload Page</text>
+
+
+    <div class="tabdrop">
+        <img src="/images/3lines.png" width="60px" height="60px">
+        <div class = "tabs">
+            <a href="index.html" class="atab">
+        Home
+            </a>
+            <a href="myprogress.html"  class="atab">
+        My Progress 
+            </a>
+            <a href="guidebook.html"  class="atab">
+        Guidebook
+            </a>
+            <a href="exerciselib.html"  class="atab">
+        Exercise Library
+            </a>
+            <a href="uploadpg.html" class="atab">
+        Upload Exercises
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <!--<div class="uplvid">
+        <form id="subform">
+        <label for="uploadedvideo" class="upllabel">Upload your video:</label>
+        <input type="file" id="uploadedvideo" accept="mp4/video" class="uplbutton" required>
+        </form>
+        <button onclick = "UploadedVid()" class="nicebutton">Submit</button>
+    </div>-->
+    <text class="currently" id="updatethis" class>Not Collecting</text>
+    <div id="canvascont"></div>
+    <div>
+        <button onclick="actualExercise()" class="nicebutton button1">Record your exercise</button>
+        <button onclick="falseData()" class="nicebutton button2">Record inaccurate poses</button>
+        <button onclick="Submit()" class="nicebutton button3">Done Recording Exercise</button>
+    </div>
+
+
+    <!--<video id="showvid" width="1000px" height="800px" controls>
+        <source src="Videos/leftlift.mp4">
+    </video>-->
+    </body>
+</html>
